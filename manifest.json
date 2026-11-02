@@ -1,6 +1,6 @@
 {
-  "name": "Psicólogo Matheus",
-  "short_name": "Painel",
+  "name": "OverWatcher",
+  "short_name": "OverWatcher",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#e3eaf2",
