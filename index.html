@@ -4,29 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#e3eaf2">
-  <title>Psicólogo Matheus</title>
+  <title>OverWatcher</title>
   <link rel="manifest" href="./manifest.json">
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      background-color: #e3eaf2;
-    }
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
-      display: block;
-    }
+    html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background-color: #e3eaf2; }
+    iframe { width: 100%; height: 100%; border: 0; display: block; }
   </style>
 </head>
 <body>
-  <iframe src="https://script.google.com/macros/s/AKfycbzlFoVbSdKcVB61R8ddoxBibKTGgkqQYbb5TrH5yruIZzuBvO2UfC9I5veXkLOr3h602g/exec" allow="geolocation; camera; microphone"></iframe>
+  <iframe id="app" allow="geolocation; camera; microphone"></iframe>
 
   <script>
+    // ============================================================
+    // ÚNICA LINHA QUE PRECISA MUDAR (só se a URL do Apps Script mudar)
+    // Use a URL terminada em /exec da implantação do OverWatcher.
+    // ============================================================
+    const URL_APP = "COLE_AQUI_A_URL_DO_SEU_WEBAPP_TERMINADA_EM_EXEC";
+
+    document.getElementById("app").src = URL_APP;
+
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('./sw.js')
         .then(() => console.log('PWA ativo'))
